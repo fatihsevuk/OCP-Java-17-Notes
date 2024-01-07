@@ -108,5 +108,108 @@ public String printDayOfWeek2(int day) {
 
 ### Note
 
-* There is semicolon after each switch statement
-* 
+* There is semicolon after each switch expression, :star::star::star:
+
+### Returning Consistent Data Type
+* You cannot return incompatible or random data type. 
+
+### yield keyword
+* Switch expression supports expression and block in case and default branches. 
+* If there is a block in case or default branches and switch expression return a value , then you must be yield a value in block in default or case branch.
+
+:star: We need to pay attention to the use of semicolons in the exam. The main switch block must end with a semicolon, and if the case and default branches do not make a return inside, they must end with a semicolon. If they make a return inside, yiled is used and in this case, the yield return ends with a semicolon, and there is no need for an extra semicolon.
+
+### Covering all possible values
+* Every switch expression mus handle all possible values of the switch variable.
+
+```java
+// Does not compile
+String type = switch(canis) {
+  case 1 -> "dog";
+  case 2 -> "wolf";
+  case 3 -> "coyote";
+};
+
+// because switch expression doesn't handle all possible situation,
+// we cannot determine type of return if canis is 5 , type can be null , empty string or undefined or some other values
+
+```
+
+To fix this we have two options,
+* default block
+
+or
+
++ Enum Type switch variable and cases for every enum types. If number of enum type are small then this option is easy to apply.
+
+:star: If switch variable is an enum, then switch must handle all type of enum, if enum has 4 type and switch has 3 type the code doesn't compile to fix this we should always add default branch to all switch expression.
+
+
+## Writing while Loops
+
+* loops -> same task but multiple time
+* loop continues if booleanExpression is true, exits if booleanExpression is false.
+
+```java
+while (booleanExpression) {
+    //Body
+}
+```
+### Do While
+
+* do/while loop guarantees that statement or block will be executed at least once. 
+
+```java
+
+int number = 2
+do {
+    number++;
+}
+while (false);
+System.out.println(number);
+```
+
+
+### Infinite Loops
+
+* Every repetition process should always terminate
+* If not they cause some problems such as overflow exceptions,memory leaks,slow performance,bad data.
+
+
+## Constructing for Loops
+
+There are two types of for loops
+* basic for loop
+* enhanced for loop or for-each loop
+
+### Edge Cases of For Loop
+
+#### Creating Infinite Loop
+
+```java
+
+for( ; ; ) 
+    System.out.println("Hello World");
+```
+
+Note: the all component of for loop is optional.
+
+#### Adding multiple terms to the for statement
+
+```java
+
+int x = 0;
+
+for (long y=0,z=4;x<5 && y<10;x++,y++) {
+    System.out.println(y+ " ")    
+}
+        
+System.out.println(x+ " ")
+```
+
+
+
+    
+
+
+
