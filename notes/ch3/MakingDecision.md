@@ -208,8 +208,74 @@ System.out.println(x+ " ")
 ```
 
 
+#### Redeclaring a Variable in the Initialization Block
 
+```java
+int x = 0;
+
+for(int x = 0; x < 5; x++) // DOES NOT COMPILE
+    System.out.println(x+ " ");
+```
     
+#### Using incompatible data types in the initialization block
+* All variables in block must have same data type.
+
+#### Using loop variable outside the loop
+
+* loop variables are only valid in loop scope.
+
+Note: It is considered a poor coding practice to modify loop variable.
+
+```java
+for(int x=0; x<10; x++)
+    x=0;
+
+// or
+
+for(int j=0; j<10; j++)
+    j++
+
+```
+
+### for-each loop
+
+* right side of loop must be built-in java array or an object whose type implements **java.lang.Iterable**
+* Right side doesn't support all the collection framework classes or interfaces, but only those that implement or extend **Collection** interface.
+* make code easier and more readable
+* left side of loop must include a variable declaration whose type is compatible with the type of array or iterable in right side.
+
+### Controlling Flow with Branching
+
+#### Nested Loops
+
+* a loop contains another loop
+
+#### Adding Optional Labels
+
+* if,switch,loops all have optional labels
+* a label is an optional pointer to the head of a statement that allows jum to it or break from it.
+* it's a single identifier that is followed by a colon(:)
+* commonly used as upper case and snake_case
+
+#### Break Statement
+
+* it ends the loops.
+* it can be used with label
+* without label, it terminates nearest nested loop
+* but with label it has capability to terminate outer loop, that label indicates.
+
+#### continue Statement
+
+* causes to finish execution of current iteration.
+* the structure of continue statements is identical with break statements but they hev different result on program flow.
 
 
+#### return Statements
 
+* terminates loop quickly 
+* more readable
+
+#### Unreachable Code
+
+* the code after break/continue/return are unreachable
+* 
