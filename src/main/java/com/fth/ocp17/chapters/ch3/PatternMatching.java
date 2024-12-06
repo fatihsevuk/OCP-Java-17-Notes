@@ -28,6 +28,43 @@ public class PatternMatching {
         return 0;
     }
 
+
+    static void printIntegersOrNumbersGreaterThan5(Number number) {
+        if(number instanceof Integer data && data.compareTo(5)>0) // DOES NOT COMPILE
+            System.out.print(data);
+    }
+
+    void printIntegerTwice(Number number) {
+        if (number instanceof Integer data)
+            System.out.print(data.intValue());
+        //System.out.print(data.intValue()); // DOES NOT COMPILE
+    }
+
+    void printOnlyIntegers(Number number) {
+        if (!(number instanceof Integer data)) {
+            return;
+        }
+        System.out.print(data.intValue());
+    }
+
+    void printOnlyIntegers2(Number number) {
+        if (!(number instanceof Integer data))
+            return;
+        else
+            System.out.print(data.intValue());
+
+        System.out.print(data.intValue());
+    }
+
+
+
+    public static void main(String[] args) {
+        int x = 10;
+        double y =2.4;
+        printIntegersOrNumbersGreaterThan5(x);
+    }
+
+
 }
 
 

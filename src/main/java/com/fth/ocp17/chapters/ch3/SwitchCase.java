@@ -44,8 +44,8 @@ public class SwitchCase {
         switch(month) {
             case 1,2,3 : season += "Winter";
             case 4,5,6 : season += "Spring";
-            default : season += "Unknown";
             case 7,8,9 : season += "Summer";
+            default : season += "Unknown";
             case 10,11,12 : season += "Fall";
         }
 
@@ -94,5 +94,12 @@ public class SwitchCase {
             case 7,8,9 -> System.out.print("Summer");
             case 10,11,12 -> System.out.print("Fall");
         }
+    }
+
+
+    public static void main(String[] args) {
+        SwitchCase sc = new SwitchCase();
+        //System.out.println(sc.printDayOfWeek(7));
+        System.out.println(sc.printSeason(15));
     }
 }
